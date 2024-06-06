@@ -4,6 +4,7 @@ using OceanTechDotNetGS.Repository;
 using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.AddDbContext<NomeDoSeuContexto>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("NomeDoSeuContexto") ?? throw new InvalidOperationException("Connection string 'NomeDoSeuContexto' not found.")));
 
@@ -19,6 +20,7 @@ builder.Services.AddDbContext<Contexto>(option =>
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IEmpresaRepository, EmpresaRepository>();
 builder.Services.AddScoped<IRegistroUsuarioRepository, RegistroUsuarioRepository>();
+builder.Services.AddScoped<IRegistroVazamentoRepository, RegistroVazamentoRepository>(); // Adicionado
 
 var app = builder.Build();
 

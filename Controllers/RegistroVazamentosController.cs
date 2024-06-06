@@ -12,21 +12,19 @@ namespace OceanTechDotNetGS.Controllers
 {
     public class RegistroVazamentoController : Controller
     {
-        private readonly IRegistroVazamentosRepository _registroVazamentoRepository;
+        private readonly IRegistroVazamentoRepository _registroVazamentoRepository;
 
-        public RegistroVazamentoController(IRegistroVazamentosRepository registroVazamentoRepository)
+        public RegistroVazamentoController(IRegistroVazamentoRepository registroVazamentoRepository)
         {
             _registroVazamentoRepository = registroVazamentoRepository;
         }
 
-        // GET: RegistroVazamentos
         public async Task<IActionResult> Index()
         {
             var registroVazamentos = await _registroVazamentoRepository.ListarTodosAsync();
             return View(registroVazamentos);
         }
 
-        // GET: RegistroVazamentos/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -43,13 +41,11 @@ namespace OceanTechDotNetGS.Controllers
             return View(registroVazamento);
         }
 
-        // GET: RegistroVazamentos/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: RegistroVazamentos/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,DataDetecao,TipoSeveridade,DescricaoVazamento,RegistroUsuarioId")] RegistroVazamento registroVazamento)
@@ -62,7 +58,6 @@ namespace OceanTechDotNetGS.Controllers
             return View(registroVazamento);
         }
 
-        // GET: RegistroVazamentos/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -79,7 +74,6 @@ namespace OceanTechDotNetGS.Controllers
             return View(registroVazamento);
         }
 
-        // POST: RegistroVazamentos/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,DataDetecao,TipoSeveridade,DescricaoVazamento,RegistroUsuarioId")] RegistroVazamento registroVazamento)
@@ -111,7 +105,6 @@ namespace OceanTechDotNetGS.Controllers
             return View(registroVazamento);
         }
 
-        // GET: RegistroVazamentos/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -128,7 +121,6 @@ namespace OceanTechDotNetGS.Controllers
             return View(registroVazamento);
         }
 
-        // POST: RegistroVazamentos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

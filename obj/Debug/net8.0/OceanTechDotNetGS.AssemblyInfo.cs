@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OceanTechDotNetGS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0509b43038204a6ad07b59999276fa90acda4b69")]
 [assembly: System.Reflection.AssemblyProductAttribute("OceanTechDotNetGS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OceanTechDotNetGS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

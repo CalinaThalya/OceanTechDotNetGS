@@ -1,15 +1,16 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using OceanTechDotNetGS.Models;
 
 namespace OceanTechDotNetGS.Repository
 {
-    public class RegistroVazamentosRepository : IRegistroVazamentosRepository
+    public class RegistroVazamentoRepository : IRegistroVazamentoRepository
     {
         private readonly Contexto _contexto;
 
-        public RegistroVazamentosRepository(Contexto contexto)
+        public RegistroVazamentoRepository(Contexto contexto)
         {
             _contexto = contexto;
         }
